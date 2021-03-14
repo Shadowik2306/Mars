@@ -178,6 +178,40 @@ def choice(planet_name):
             </html>
         '''
 
+@app.route('/load_photo')
+def load_photo():
+    return f"""
+    <!DOCTYPE html>
+    <html lang="ru">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+              integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+              crossorigin="anonymous">
+        <link rel="stylesheet" href="{url_for('static', filename='css/stile_for_find_astr.css')}">
+    </head>
+    <body>
+        <div class="astrounaut">
+            <h1>Загрузка фотографии</h1>
+            <p>для участия в миссии</p>
+            <div class="menu">
+                <div class="form-group">
+                    <div>
+                        <p>Приложите фотографию</p>
+                        <button type="submit" class="btn btn-primary" value="send_img">Выберите файл</button>
+                        <label for="send_img">Файл не выбран</label>
+                    </div>
+                    <img width="60%" src="static/img/owl.jpeg">
+                </div>
+                <button type="submit" class="btn btn-primary">Отправить</button>
+            </div>
+        </div>
+    </body>
+    </html>
+    """
+
 
 if __name__ == '__main__':
     app.run(port=8081, host='127.0.0.1')
