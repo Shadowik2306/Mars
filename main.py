@@ -32,7 +32,7 @@ def promotion_image():
                 <link rel="stylesheet" href="{url_for('static', filename='css/style.css')}" type="text/css">
         </head>
         <body>
-                <h1>Жди нас, Марс!</h1>
+                <h1>Жди нс, Марс!</h1>
                 <img src="{url_for('static', filename='img/mars.jpg')}"
                     alt="здесь должна была быть картинка, но не нашлась"
                     height=250px width=500px>
@@ -150,6 +150,32 @@ def astronaut_selection():
             </div>
         </body>
         </html>'''
+
+@app.route('/choice/<planet_name>')
+def choice(planet_name):
+    dct = {
+        'Марс': ['Макс', 'суть я понял', 'Но я ленивый', '=)']
+    }
+    lst = dct[planet_name]
+    body = ''
+    for i in lst:
+        body += f"""<div class="alert alert-primary" role="alert">
+                          {i}
+                    </div>"""
+    return f'''
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>Колонизация</title>
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+                    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+                    <link rel="stylesheet" href="{url_for('static', filename='css/style.css')}" type="text/css">
+            </head>
+            <body>
+                {body}
+            </body>
+            </html>
+        '''
 
 
 if __name__ == '__main__':
