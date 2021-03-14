@@ -213,5 +213,47 @@ def load_photo():
     """
 
 
+@app.route('/carousel')
+def carousel():
+    return f'''
+        <!DOCTYPE html>
+            <html lang="ru">
+            <head>
+                <title></title>
+                <meta charset="utf-8">
+                <link rel="stylesheet"
+                      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+                      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+                      crossorigin="anonymous">
+                <link rel="stylesheet" href="{url_for('static', filename='css/stile_for_find_astr.css')}">
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+            </head>
+            <body>
+                <div class="astrounaut">
+                    <h1>Загрузка фотографии</h1>
+                    <p>для участия в миссии</p>
+                    <div class="menu">
+                        <h1>Пейзажи Марса</h1>
+                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                          <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="{url_for('static', filename='img/carousel/1.jpeg')}" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item">
+                              <img src="{url_for('static', filename='img/carousel/2.jpg')}" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item">
+                              <img src="{url_for('static', filename='img/carousel/3.jpg')}" class="d-block w-100">
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </body>
+            </html>
+    '''
+
 if __name__ == '__main__':
     app.run(port=8081, host='127.0.0.1')
