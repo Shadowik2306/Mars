@@ -67,7 +67,7 @@ def astronaut_selection():
                   href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
                   integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
                   crossorigin="anonymous">
-            <link rel="stylesheet" href="{url_for('static', filename='css/static/css/stile_for_find_astr.css')}">
+            <link rel="stylesheet" href="{url_for('static', filename='css/stile_for_find_astr.css')}">
         </head>
         <body>
             <div class="astrounaut">
@@ -172,6 +172,7 @@ def choice(planet_name):
                     <link rel="stylesheet" href="{url_for('static', filename='css/style.css')}" type="text/css">
             </head>
             <body>
+                <h1> Выбрана планета {planet_name} </h1>
                 {body}
             </body>
             </html>
@@ -179,4 +180,4 @@ def choice(planet_name):
 
 
 if __name__ == '__main__':
-    app.run(port=8080, host='127.0.0.1')
+    app.run(port=8081, host='127.0.0.1')
